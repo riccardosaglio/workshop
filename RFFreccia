@@ -1,0 +1,108 @@
+//Diagrammi RF , costruzione delle tabelle 
+clear 
+clc
+//LN1300_R2.9_f0.166
+Tiro=linspace(261,300,20);
+WAngle=linspace(10,180,500);
+WARad=WAngle*%pi/180;
+LN=130;
+for j=1:20
+for i=1:500,
+R(i)=2*Tiro(j)*sin(WARad(i)/2)/LN;
+    if R(i)>4// & R(i)<3.91 then
+    OUTPutR(j)=R(i)
+    OUTPutA(j)=WAngle(i)
+    break
+    end
+end
+end
+for y=1:20
+    OUTPUT1300(y,1)=Tiro(y)
+    OUTPUT1300(y,2)=OUTPutR(y)
+    OUTPUT1300(y,3)=OUTPutA(y)
+end
+//LN1500_R3_f0.185
+Tiro=linspace(226,300,20);
+WAngle=linspace(10,180,500);
+WARad=WAngle*%pi/180;
+LN=150;
+for j=1:20
+for i=1:500,
+R(i)=2*Tiro(j)*sin(WARad(i)/2)/LN;
+    if R(i)>3// & R(i)<3.91 then
+    OUTPutR(j)=R(i)
+    OUTPutA(j)=WAngle(i)
+    break
+    end
+end
+end
+for y=1:20
+    OUTPUT1500(y,1)=Tiro(y)
+    OUTPUT1500(y,2)=OUTPutR(y)
+    OUTPUT1500(y,3)=OUTPutA(y)
+end
+//LN1700_R2.2_f0.207
+Tiro=linspace(183,300,20);
+WAngle=linspace(10,180,500);
+WARad=WAngle*%pi/180;
+LN=170;
+for j=1:20
+for i=1:500,
+R(i)=2*Tiro(j)*sin(WARad(i)/2)/LN;
+    if R(i)>2.2// & R(i)<3.91 then
+    OUTPutR(j)=R(i)
+    OUTPutA(j)=WAngle(i)
+    break
+    end
+end
+end
+for y=1:20
+    OUTPUT1700(y,1)=Tiro(y)
+    OUTPUT1700(y,2)=OUTPutR(y)
+    OUTPUT1700(y,3)=OUTPutA(y)
+end
+//LN2100_R1.25_f0.243
+Tiro=linspace(132,300,20);
+WAngle=linspace(10,180,500);
+WARad=WAngle*%pi/180;
+LN=210;
+for j=1:20
+for i=1:500,
+R(i)=2*Tiro(j)*sin(WARad(i)/2)/LN;
+    if R(i)>1.25// & R(i)<3.91 then
+    OUTPutR(j)=R(i)
+    OUTPutA(j)=WAngle(i)
+    break
+    end
+end
+end
+for y=1:20
+    OUTPUT2100(y,1)=Tiro(y)
+    OUTPUT2100(y,2)=OUTPutR(y)
+    OUTPUT2100(y,3)=OUTPutA(y)
+end
+//LN2500_R0.72_f0.277
+Tiro=linspace(35.8,300,20);
+WAngle=linspace(10,180,500);
+WARad=WAngle*%pi/180;
+LN=250;
+for j=1:20
+for i=1:500,
+R(i)=2*Tiro(j)*sin(WARad(i)/2)/LN;
+    if R(i)>0.72// & R(i)<3.91 then
+    OUTPutR(j)=R(i)
+    OUTPutA(j)=WAngle(i)
+    break
+    end
+end
+end
+for y=1:20
+    OUTPUT2500(y,1)=Tiro(y)
+    OUTPUT2500(y,2)=OUTPutR(y)
+    OUTPUT2500(y,3)=OUTPutA(y)
+end
+//disp(OUTPUT)
+//figure(1)
+
+plot(OUTPUT1300(:,1),OUTPUT1300(:,3),OUTPUT1500(:,1),OUTPUT1500(:,3),Tiro,'colo','red','linest','-.','marker','>','markeredg','cyan','markerFace','yellow','markersize',5)
+
